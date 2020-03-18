@@ -110,7 +110,7 @@
         </div>
         <div class="block">
                         <div class="block-header">
-                            <h3 class="block-title">Manajemen User Dosen <small></small></h3>
+                            <h3 class="block-title">Manajemen User Dosen<small></small></h3>
                         </div>
                         <div class="block-content">
                             <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
