@@ -18,8 +18,17 @@
     else if($level=='mahasiswa'){
         $name=$sisfo->usermhs($_SESSION['username']);
     }
-    else if($level=='staff'){
+    else if($level=='staff_tmr'){
         $name=$sisfo->userstaff($_SESSION['username']);
+    }
+    else if($level=='staff_brt'){
+        $name=$sisfo->userstaff($_SESSION['username']);
+    }
+    else if($level=='staff_prodi'){
+        $name=$sisfo->userstaff($_SESSION['username']);
+    }
+    else if($level=='admin'){
+        $name='admin';
     }
 
 ?>
@@ -481,13 +490,64 @@
                                     mainmenu_adm();
                                 }
                                 else if($level=="mahasiswa") {
-                                    mainmenu_mhs();
+                                    if(empty($_GET['tag'])) {
+                                        mainmenu_mhs();
+                                    }
+                                    else {
+                                        $menu=$_GET['tag'];
+                                        if($menu=='II'){
+                                            menu_presensi_mhs();
+                                        }
+                                        else if($menu=='III'){
+                                            menu_alat_mhs();
+                                        }
+                                        else if($menu=='IV'){
+                                            menu_ta_mhs();
+                                        }
+                                        else {
+                                            mainmenu_mhs();
+                                        }
+                                    }
                                 }
                                 else if($level=="dosen") {
-                                    mainmenu_dosen();
+                                    if(empty($_GET['menu'])) {
+                                        mainmenu_dosen();
+                                    }
+                                    else {
+                                        $menu=$_GET['menu'];
+                                        if($menu=='II'){
+                                            menu_presensi_dosen();
+                                        }
+                                        else if($menu=='III'){
+                                            menu_alat_dosen();
+                                        }
+                                        else if($menu=='IV'){
+                                            menu_ta_dosen();
+                                        }
+                                        else {
+                                            mainmenu_dosen();
+                                        }
+                                    }
                                 }
                                 else if($level=="kaprodi") {
-                                    mainmenu_dosen();
+                                    if(empty($_GET['menu'])) {
+                                        mainmenu_dosen();
+                                    }
+                                    else {
+                                        $menu=$_GET['menu'];
+                                        if($menu=='II'){
+                                            menu_presensi_kaprodi();
+                                        }
+                                        else if($menu=='III'){
+                                            menu_alat_dosen();
+                                        }
+                                        else if($menu=='IV'){
+                                            menu_ta_kaprodi();
+                                        }
+                                        else {
+                                            mainmenu_dosen();
+                                        }
+                                    }
                                 }
                                 else if($level=="staff") {
                                     mainmenu_staff();
@@ -527,18 +587,25 @@
                                         <span class="badge badge-success pull-right">1</span>Profile
                                     </a>
                                 </li>
-                                <li>
-                                    <a tabindex="-1" href="javascript:void(0)">
-                                        <i class="si si-settings pull-right"></i>Settings
-                                    </a>
-                                </li>
                                 <li class="divider"></li>
                                 <li class="dropdown-header">Actions</li>
-                                <li>
-                                    <a tabindex="-1" href="base_pages_lock.html">
-                                        <i class="si si-lock pull-right"></i>Lock Account
-                                    </a>
-                                </li>
+                                <?php 
+                                    if(empty($_GET['tag'])) {
+
+                                    }
+                                    else if($_GET['tag']=='I'){
+
+                                    }
+                                    else {
+                                        ?>
+                                        <li>
+                                            <a tabindex="-1" href="?">
+                                                <i class="si si-action-undo pull-right"></i>Back
+                                            </a>
+                                        </li>
+                                        <?php
+                                    }
+                                ?>
                                 <li>
                                     <a tabindex="-1" href="logout.php">
                                         <i class="si si-logout pull-right"></i>Log out
@@ -583,8 +650,26 @@
                         <div class="content content-narrow">
                             <div class="block block-transparent">
                                 <div class="block-content block-content-full">
-                                    <h1 class="h1 font-w300 text-white animated fadeInDown push-50-t push-5">Dashboard</h1>
-                                    <h2 class="h4 font-w300 text-white-op animated fadeInUp">Welcome <?php echo $name; ?></h2>
+                                    <h1 id="demo" class="h1 font-w300 text-white animated fadeInDown push-50-t push-5">Dashboard</h1>
+                                    <h2 class="h4 font-w300 text-white-op animated fadeInUp">
+                                    <?php
+                                        if(empty($_GET['tag'])){
+                                            echo 'Welcome &nbsp;';
+                                        }
+                                        else if($_GET['tag']=='II'){
+                                            echo 'Presensi '; echo $level; echo ' | ';
+                                        }
+                                        else if($_GET['tag']=='III'){
+                                            echo 'Peminjaman Alat |&nbsp;';
+                                        }
+                                        else if($_GET['tag']=='IV'){
+                                            echo 'Monitoring Tugas Akhir |&nbsp;';
+                                        }
+                                        else {
+                                            echo 'Welcome';
+                                        }
+                                    ?>    
+                                    <?php echo $name; ?></h2>
                                 </div>
                             </div>
                         </div>
@@ -593,18 +678,15 @@
                 <!-- END Page Header -->
 
                 <!-- Page Content -->
-
+                
                 <!-- END Page Content -->
             </main>
             <!-- END Main Container -->
-
+            
             <!-- Footer -->
             <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
-                <div class="pull-right">
-                    Crafted with <i class="fa fa-heart text-city"></i> by <a class="font-w600" href="http://goo.gl/vNS3I" target="_blank">pixelcave</a>
-                </div>
                 <div class="pull-left">
-                    <a class="font-w600" href="http://goo.gl/6LF10W" target="_blank">OneUI 3.1</a> &copy; <span class="js-year-copy"></span>
+                    <a class="font-w600">SiSfo Protel</a> &copy; <span class="js-year-copy"></span>
                 </div>
             </footer>
             <!-- END Footer -->
@@ -621,13 +703,13 @@
         <script src="../assets/js/core/jquery.placeholder.min.js"></script>
         <script src="../assets/js/core/js.cookie.min.js"></script>
         <script src="../assets/js/app.js"></script>
+        <script src="../assets/js/system.js"></script>
 
         <!-- Page Plugins -->
         <script src="../assets/js/plugins/chartjs/Chart.min.js"></script>
 
         <!-- Page JS Code -->
         <script src="../assets/js/pages/base_pages_dashboard_v2.js"></script>
-        <script src="../assets/js/system.js"></script>
         <script>
             jQuery(function () {
                 // Init page helpers (CountTo plugin)

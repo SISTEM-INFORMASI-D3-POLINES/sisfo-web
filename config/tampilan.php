@@ -3,20 +3,20 @@
     //main menu
     function mainmenu_adm() {
     ?>
-        <li id="a">
-            <a href="#" id="0" class=""><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+        <li>
+            <a href="#" id="0" class=""><i class="si si-speedometer"></i><span id="a" class="sidebar-mini-hide">Dashboard</span></a>
         </li>
-        <li id="b">
-            <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user"></i><span class="sidebar-mini-hide">Managemen User</span></a>
+        <li>
+            <a id='1' class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-user"></i><span id="b" class="sidebar-mini-hide">Managemen User</span></a>
                 <ul>
                     <li>
-                        <a id="1" href="#">Managemen User Dosen</a>
+                        <a id="2" href="#">Managemen User Dosen</a>
                     </li>
                     <li>
-                        <a id="2" href="#">Managemen User Mahasiswa</a>
+                        <a id="3" href="#">Managemen User Mahasiswa</a>
                     </li>
                     <li>
-                        <a id="3" href="#">Managemen User Staff</a>
+                        <a id="4" href="#">Managemen User Staff</a>
                     </li>
                 </ul>
         </li>
@@ -24,355 +24,177 @@
 	}
 	function mainmenu_mhs() {
 	?>
-        <li id="a">
-            <a href="#" id="0" class=""><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+        <li>
+            <a ref="#" id="0" class=""><i class="si si-speedometer"></i><span id="a" class="sidebar-mini-hide">Dashboard</span></a>
         </li>
-        <li id="b">
-            <a href="#" id="1" class=""><i class="si si-clock"></i><span class="sidebar-mini-hide">Presensi Mahasiswa</span></a>
+        <li>
+            <a href="?tag=II" id="1" class=""><i class="si si-clock"></i><span id="b" class="sidebar-mini-hide">Presensi Mahasiswa</span></a>
         </li>
-        <li id="c">
-            <a href="#" id="2" class=""><i class="si si-wrench"></i><span class="sidebar-mini-hide">Peminjaman Alat</span></a>
+        <li>
+            <a href="?tag=III" id="2" class=""><i class="si si-wrench"></i><span id="c" class="sidebar-mini-hide">Peminjaman Alat</span></a>
         </li>
-        <li id="d">
-            <a href="#" id="3" class=""><i class="si si-book-open"></i><span class="sidebar-mini-hide">Monitoring Tugas Akhir</span></a>
+        <li>
+            <a href="?tag=IV" id="3" class=""><i class="si si-book-open"></i><span id="d" class="sidebar-mini-hide">Monitoring Tugas Akhir</span></a>
         </li>
 	<?php
 	}
 	function mainmenu_dosen() {
 	?>
-		<li id="a">
-            <a href="#" id="0" class=""><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span></a>
+		<li>
+            <a href="#" id="0" class=""><i class="si si-speedometer"></i><span id="a" class="sidebar-mini-hide">Dashboard</span></a>
         </li>
-        <li id="b">
-            <a href="#" id="1" class=""><i class="si si-clock"></i><span class="sidebar-mini-hide">Presensi</span></a>
+        <li>
+            <a href="?tag=II" id="1" class=""><i class="si si-clock"></i><span id="b" class="sidebar-mini-hide">Presensi</span></a>
         </li>
-        <li id="c">
-            <a href="#" id="2" class=""><i class="si si-wrench"></i><span class="sidebar-mini-hide">Peminjaman Alat</span></a>
+        <li>
+            <a href="?tag=III" id="2" class=""><i class="si si-wrench"></i><span id="c" class="sidebar-mini-hide">Peminjaman Alat</span></a>
         </li>
-        <li id="d">
-            <a href="#" id="3" class=""><i class="si si-book-open"></i><span class="sidebar-mini-hide">Monitoring Tugas Akhir</span></a>
+        <li>
+            <a href="?tag=IV" id="3" class=""><i class="si si-book-open"></i><span id="d" class="sidebar-mini-hide">Monitoring Tugas Akhir</span></a>
         </li>
 	<?php
     }
     function mainmenu_staff() {
         ?>
-            <li id="a" class="">
+            <li>
                 <a href="#" id="0"><i class="fa fa-th-large"></i> <span class="nav-label">Beranda</span></a>
             </li>
-            <li id="b" class="">
+            <li>
                 <a href="#" id="1"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Order</span></a>
             </li>
         <?php
     }
-    
+
+    //menu presensi
+    function menu_presensi_mhs() {
+        ?>
+            <li>
+                <a href="#" id="0" class=""><i class="si si-speedometer"></i><span id="a" class="sidebar-mini-hide">Dashboard</span></a>
+            </li>
+            <li>
+                <a href="#" id="1" class=""><i class="si si-clock"></i><span id="b" class="sidebar-mini-hide">Manajemen Kehadiran</span></a>
+            </li>
+            <li>
+                <a href="#" id="2" class=""><i class="si si-wrench"></i><span id="c" class="sidebar-mini-hide">Manajemen Jadwal</span></a>
+            </li>
+        <?php
+        }
+        function menu_presensi_dosen() {
+        ?>
+            <li>
+                <a href="#" id="0" class=""><i class="si si-speedometer"></i><span id="a" class="sidebar-mini-hide">Dashboard</span></a>
+            </li>
+            <li>
+                <a href="#" id="1" class=""><i class="si si-clock"></i><span id="b" class="sidebar-mini-hide">Presensi</span></a>
+            </li>
+            <li>
+                <a href="#" id="2" class=""><i class="si si-wrench"></i><span id="c" class="sidebar-mini-hide">Peminjaman Alat</span></a>
+            </li>
+            <li>
+                <a href="#" id="3" class=""><i class="si si-book-open"></i><span id="d" class="sidebar-mini-hide">Monitoring Tugas Akhir</span></a>
+            </li>
+        <?php
+        }
+
     //data admin
     function data_adm() {
     ?>
         <!-- beranda -->
-        <div class="row oy1">
-            <?php 
-            $ayam=new ayam;
-            $koneksi=$ayam->koneksi();
 
-            $q1=mysqli_query($koneksi,"SELECT username FROM login WHERE id_grup='peternak'");
-            $d1=mysqli_num_rows($q1);
-            $q2=mysqli_query($koneksi,"SELECT username FROM login WHERE id_grup='penjual'");
-            $d2=mysqli_num_rows($q2);
-            $d=$d1+$d2;
-            ?>
-                    <div class="col-lg-4">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <span class="label label-success pull-right"></span>
-                                <h5>Total</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <h1 class="no-margins"><?php echo $d ?></h1>
-                                <div class="stat-percent font-bold text-success"><i class="fa fa-users"></i></div>
-                                <small>Jumlah Peternak + Penjual</small>
-                            </div>
+        <!-- man usr dosen-->
+        <div class="block block-bordered oy3">
+                        <div class="block-header bg-gray-lighter">
+                            <ul class="block-options">
+                                <li>
+                                    <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                </li>
+                                <li>
+                                    <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
+                                </li>
+                            </ul>
+                            <h3 class="block-title">Multiple Columns</h3>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <span class="label label-info pull-right"></span>
-                                <h5>Peternak</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <h1 class="no-margins"><?php echo $d1 ?></h1>
-                                <div class="stat-percent font-bold text-info"><i class="fa fa-user"></i></div>
-                                <small>Jumlah Peternak</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ibox float-e-margins">
-                            <div class="ibox-title">
-                                <span class="label label-primary pull-right"></span>
-                                <h5>Penjual</h5>
-                            </div>
-                            <div class="ibox-content">
-                                <h1 class="no-margins"><?php echo $d2 ?></h1>
-                                <div class="stat-percent font-bold text-navy"><i class="fa fa-user"></i></div>
-                                <small>Jumlah Penjual</small>
-                            </div>
-                        </div>
-                    </div>
-        </div>
-
-        <!-- man usr -->
-        <div class="row oy2">
-                <div class="col-lg-12">
-                <?php
-                $ayam=new ayam;
-                $koneksi=$ayam->koneksi();
-                
-				if(isset($_POST['tombol'])){
-                    $tombol=$_POST['tombol'];
-					
-				    if($tombol=="simpan") {
-                        $user=$_POST['user'];
-                        $pass=$_POST['pass'];
-                        $id_grup=$_POST['id_grup'];
-                        $nama=$_POST['nama'];
-                        $alamat=$_POST['alamat'];
-                        $kota=$_POST['kota'];
-                        $tlp=$_POST['tlp'];
-                        $email=$_POST['email'];
-                        $stok=$_POST['stok'];
-                        $harga=$_POST['harga'];
-                        //masukkan data
-                        mysqli_query($koneksi,"INSERT INTO login (username,pass,id_grup,nama,alamat,kota,tlp,email,create_login,stok,harga) VALUES ('$user',md5('$pass'),'$id_grup','$nama','$alamat','$kota','$tlp','$email',NOW(),'$stok','$harga')");
-                    
-                        if(mysqli_affected_rows($koneksi)>0) {
-                            echo "<div class=\"alert alert-success alert-dismissible\">
-                            <button aria-hidden=true data-dismiss=alert class=close type=button>×</button>
-                            <strong>Berhasil!</strong> Masuk
-                            </div>";
-                            $user=''; $pass=''; $id_grup=''; $nama=''; $alamat=''; $kota=''; $tlp=''; $email=''; $stok=''; $harga=''; $val='simpan';
-                        }
-                        else{
-                            echo "<div class=\"alert alert-danger alert-dismissable\">
-                            <button aria-hidden=true data-dismiss=alert class=close type=button>×</button>
-                            <strong>Gagal!</strong> Masuk
-                            </div>";
-                        }
-				
-	    			}				
-				elseif($tombol=='update'){
-					$user=$_POST['user'];
-					$pass=$_POST['pass'];
-					$id_grup=$_POST['id_grup'];
-					$nama=$_POST['nama'];
-					$alamat=$_POST['alamat'];
-					$kota=$_POST['kota'];
-					$tlp=$_POST['tlp'];
-					$email=$_POST['email'];
-					$stok=$_POST['stok'];
-					$harga=$_POST['harga'];
-					mysqli_query($koneksi,"UPDATE login SET pass=md5('$pass'),id_grup='$id_grup',nama='$nama',alamat='$alamat',kota='$kota',tlp='$tlp',email='$email',stok='$stok',harga='$harga' WHERE username='$user'");
-				
-					if(mysqli_affected_rows($koneksi)>0) {
-						echo "<div class=\"alert alert-success alert-dismissible\">
-						<button aria-hidden=true data-dismiss=alert class=close type=button>×</button>
-						<strong>Berhasil!</strong> Diubah...
-						</div>";
-						$user=''; $pass=''; $id_grup=''; $nama=''; $alamat=''; $kota=''; $tlp=''; $email=''; $stok=''; $harga=''; $val='simpan';
-					}
-					else{
-						echo "<div class=\"alert alert-danger alert-dismissible\">
-						<button aria-hidden=true data-dismiss=alert class=close type=button>×</button>
-						<strong>Gagal!</strong> Diubah...
-						</div>";
-					}
-				
-				}
-			}
-
-				elseif (isset($_GET['p'])) {  
-					$p=$_GET['p'];
-					$pk=$_GET['pk'];
-					if($p=="hapus") {
-						mysqli_query($koneksi,"DELETE FROM login WHERE username='$pk'");
-					}
-					elseif ($p=='edit'){
-						$q=mysqli_query($koneksi, "SELECT username,id_grup,nama,alamat,kota,tlp,email,stok,harga FROM login WHERE username='$pk'");
-						$d=mysqli_fetch_row($q);
-						$user=$d[0];
-						$id_grup=$d[1];
-						$nama=$d[2];
-						$alamat=$d[3];
-						$kota=$d[4];
-						$tlp=$d[5];
-						$email=$d[6];
-						$stok=$d[7];
-						$harga=$d[8];
-						$val='update';
-					}
-					else header("location:index.php");
-				}
-					else {
-						$val='simpan';
-						if(empty($user)) $user='';
-						if(empty($id_grup)) $id_grup='';
-						if(empty($nama)) $nama='';
-						if(empty($alamat)) $alamat='';
-						if(empty($kota)) $kota='';
-						if(empty($tlp)) $tlp='';
-						if(empty($email)) $email='';
-						if(empty($stok)) $stok='';
-						if(empty($harga)) $harga='';
-					}
-				?>
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Input Data <small>User Aplikasi Peternak Ayam</small></h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                
-                            </div>
-                        </div>
-                        <div class="ibox-content" style="display:none;" id="up">
-                            <form action="" method="post" id="login_form" class="form-horizontal">
-                                <?php echo "<input type=hidden name=user value=\"$user\">"; ?>
-                                <div class="form-group"><label class="col-sm-2 control-label">Username</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="user" id="user" value="<?php echo $user ?>" <?php error_reporting(0); if($_GET['p']=='edit'){echo 'disabled';} ?>></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Password</label>
-                                    <div class="col-sm-10"><input type="password" class="form-control" name="pass" id="pass"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Jenis Akun</label>
-
-                                    <div class="col-sm-10"><select class="form-control m-b" name="id_grup" id="id_grup">
-                                    <option value="">Pilih Grup</option>
-                                        <?php
-                                        $grup=array('admin','peternak','penjual');
-                                        foreach($grup as $ig) {
-                                            if($ig==$id_grup) $sel="SELECTED"; else $sel='';
-                                            echo "<option value=$ig $sel>".ucfirst($ig)."</option>";
-                                        }
-                                        ?>
-                                    </select>
+                        <div class="block-content">
+                            <form class="form-horizontal push-10-t push-10" action="base_forms_premade.html" method="post" onsubmit="return false;">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <div class="col-xs-6">
+                                                <label for="mega-firstname">Firstname</label>
+                                                <input class="form-control input-lg" type="text" id="mega-firstname" name="mega-firstname" placeholder="Enter your firstname..">
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label for="mega-lastname">Lastname</label>
+                                                <input class="form-control input-lg" type="text" id="mega-lastname" name="mega-lastname" placeholder="Enter your lastname..">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <label for="mega-lastname">Username</label>
+                                                <input class="form-control input-lg" type="text" id="mega-username" name="mega-username" placeholder="Enter your username..">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Nama</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="nama" id="nama" value="<?php echo $nama ?>"></div>
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <label for="mega-bio">Bio</label>
+                                                <textarea class="form-control input-lg" id="mega-bio" name="mega-bio" rows="22" placeholder="Enter a few details about yourself.."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <label for="mega-city">Where do you live?</label>
+                                                <input class="form-control input-lg" type="text" id="mega-city" name="mega-city" placeholder="Enter your location..">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <label for="mega-skills">Skills</label>
+                                                <select class="form-control" id="mega-skills" name="mega-skills" size="7" multiple>
+                                                    <option value="1">HTML</option>
+                                                    <option value="2">CSS</option>
+                                                    <option value="3">JavaScript</option>
+                                                    <option value="4">PHP</option>
+                                                    <option value="5">Ruby</option>
+                                                    <option value="6">Photoshop</option>
+                                                    <option value="7">Illustrator</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-xs-6">
+                                                <label for="mega-age">Age</label>
+                                                <input class="form-control input-lg" type="text" id="mega-age" name="mega-age" placeholder="Enter your age..">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-12">Gender</label>
+                                            <div class="col-xs-12">
+                                                <label class="css-input css-radio css-radio-warning push-10-r">
+                                                    <input type="radio" name="mega-gender-group"><span></span> Female
+                                                </label>
+                                                <label class="css-input css-radio css-radio-warning">
+                                                    <input type="radio" name="mega-gender-group"><span></span> Male
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Alamat</label>
-                                    <div class="col-sm-10"><textarea class="form-control" rows="3" name="alamat" id="alamat" ><?php echo $alamat ?></textarea></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Kota</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="kota" id="kota" value="<?php echo $kota ?>"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Nomor Telp</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="tlp" id="tlp" value="<?php echo $tlp ?>"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">E-mail</label>
-                                    <div class="col-sm-10"><input type="email" class="form-control" name="email" id="email" value="<?php echo $email ?>"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Stok</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="stok" id="stok" value="<?php echo $stok ?>"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">Harga</label>
-                                    <div class="col-sm-10"><input type="text" class="form-control" name="harga" id="harga" value="<?php echo $harga ?>"></div>
-                                </div>
-                                <div class="hr-line-dashed"></div>
                                 <div class="form-group">
-                                    <div class="col-sm-4 col-sm-offset-2">
-                                        <button class="btn btn-primary" type="submit" name="tombol" value="<?php echo $val ?>">Simpan</button>
+                                    <div class="col-xs-12">
+                                        <button class="btn btn-warning" type="submit"><i class="fa fa-check push-5-r"></i> Complete Profile</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>Data User Aplikasi Peternak Ayam</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-
-                        <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover dataTables-example"  id="login_data">
-                    <thead>
-                    <tr>
-                        <th>Username</th>
-                        <th>Grup</th>
-                        <th>Nama</th>
-                        <th>Alamat</th>
-                        <th>Kota</th>
-                        <th>Telepon</th>
-                        <th>Email</th>
-                        <th>Stok</th>
-                        <th>Harga</th>
-                        <th>Aksi</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-						$q=mysqli_query($koneksi,"SELECT username,id_grup,nama,alamat,kota,tlp,email,stok,harga FROM login ORDER BY create_login DESC");
-						while($d=mysqli_fetch_row($q)){
-                            $harga=$ayam->rupiah($d[8]);
-						echo "<tr>
-                            <td>$d[0]</td>
-                            <td>$d[1]</td>
-                            <td>$d[2]</td>
-                            <td>$d[3]</td>
-                            <td>$d[4]</td>
-                            <td>$d[5]</td>
-                            <td>$d[6]</td>
-                            <td>$d[7] ekor</td>
-                            <td>$harga</td>
-                            <td><button type=button class=\"btn btn-primary btn-sm\" data-pk='$d[0]'>Edit</button> <button type=button class=\"btn btn-danger btn-sm\" data-pk='$d[0]'>Delete</button></td>
-                            </tr>";
-                        }
-                    ?>
-                    </tbody>
-                    </table>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog">
-                                <div class="modal-content animated bounceInRight">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                            <i class="fa fa-laptop modal-icon"></i>
-                                            <h4 class="modal-title">Hapus Akun</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-white" data-dismiss="modal">Tutup</button>
-                                            <button type="button" class="btn btn-primary">Simpan</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
     <?php
     }
 
