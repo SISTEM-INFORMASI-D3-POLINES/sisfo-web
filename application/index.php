@@ -69,6 +69,8 @@
         <!-- Web fonts -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
 
+        <link rel="stylesheet" href="../assets/js/plugins/datatables/jquery.dataTables.min.css">
+
         <!-- Bootstrap and OneUI CSS framework -->
         <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" id="css-main" href="../assets/css/oneui.css">
@@ -654,7 +656,7 @@
                                     <h2 class="h4 font-w300 text-white-op animated fadeInUp">
                                     <?php
                                         if(empty($_GET['tag'])){
-                                            echo 'Welcome &nbsp;';
+                                            echo 'Welcome&nbsp;';
                                         }
                                         else if($_GET['tag']=='II'){
                                             echo 'Presensi '; echo $level; echo ' | ';
@@ -678,7 +680,71 @@
                 <!-- END Page Header -->
 
                 <!-- Page Content -->
-                
+                <?php
+                    if($level=='dosen'){
+                        if(empty($_GET['tag'])) {
+                            dashboard();
+                        }
+                        else if($_GET['tag']=='I') {
+                            dashboard();
+                        }
+                        else if($_GET['tag']=='II') {
+                            presensi_dsn();
+                        }
+                        else if($_GET['tag']=='III') {
+                            tools_dsn();
+                        }
+                        else if($_GET['tag']=='IV') {
+                            ta_dsn();
+                        }
+                    }
+                    if($level=='kaprodi'){
+                        if(empty($_GET['tag'])) {
+                            dashboard();
+                        }
+                        else if($_GET['tag']=='I') {
+                            dashboard();
+                        }
+                        else if($_GET['tag']=='II') {
+                            presensi_kaprodi();
+                        }
+                        else if($_GET['tag']=='III') {
+                            tools_dsn();
+                        }
+                        else if($_GET['tag']=='IV') {
+                            ta_kaprodi();
+                        }
+                    }
+                    else if($level=='mahasiswa'){
+                        if(empty($_GET['tag'])) {
+                            dashboard();
+                        }
+                        else if($_GET['tag']=='I') {
+                            dashboard();
+                        }
+                        else if($_GET['tag']=='II') {
+                            presensi_mhs();
+                        }
+                        else if($_GET['tag']=='III') {
+                            tools_mhs();
+                        }
+                        else if($_GET['tag']=='IV') {
+                            ta_mhs();
+                        }
+                    }
+                    else if($level=='staff_tmr'){
+                        data_staff();
+                    }
+                    else if($level=='staff_brt'){
+                        data_staff();
+                    }
+                    else if($level=='staff_prodi'){
+                        data_staff_prodi();
+                    }
+                    else if($level=='admin'){
+                        data_adm();
+                    }   
+                    ?>
                 <!-- END Page Content -->
             </main>
             <!-- END Main Container -->
@@ -707,9 +773,12 @@
 
         <!-- Page Plugins -->
         <script src="../assets/js/plugins/chartjs/Chart.min.js"></script>
+        <script src="../assets/js/plugins/datatables/jquery.dataTables.min.js"></script>
 
         <!-- Page JS Code -->
+        <script src="../assets/js/pages/base_tables_datatables.js"></script>
         <script src="../assets/js/pages/base_pages_dashboard_v2.js"></script>
+        
         <script>
             jQuery(function () {
                 // Init page helpers (CountTo plugin)
